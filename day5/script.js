@@ -1,6 +1,6 @@
 for(let i = 1; i <= 50; i++){
     if( i % 2 === 0){
-        console.log("even");
+        console.log(i,"even");
     }else{
         console.log(i);
     }
@@ -22,7 +22,7 @@ const student = {
 
 // Add a new skill to the object
 student.skills.push("React");
-console.log(student.skills);
+  console.log(student);
 
 // Use a loop to print all keys and values of the object
 for (let key in student) {
