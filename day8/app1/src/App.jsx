@@ -1,11 +1,7 @@
-import MyComponent from "./components/MyComponent";
+import Intro from "./components/Intro";
 
 function App() {
-  return (
-    <div>
-      <MyComponent />
-    </div>
-  );
+  return <Intro />;
 }
 
 export default App;
