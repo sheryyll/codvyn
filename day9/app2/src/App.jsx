@@ -1,5 +1,6 @@
 import Card from "./components/Card";
 import Counter from "./components/Counter";
+import ToggleMessage from "./components/ToggleMessage";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         description="Using props makes components flexible and reusable."
       />
       <Counter />
+
+      <ToggleMessage />
     </>
   );
 }
