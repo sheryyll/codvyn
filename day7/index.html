@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Day 7 JavaScript + DOM Project Part 2</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 7 Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <h1>Day 7 JavaScript + DOM Project Part 2</h1>
-    <p>Today's course focused on JavaScript and DOM manipulation (Project Part 1).
-        I learned how to use JavaScript to select HTML elements and change their content and style.
-        This helped me understand how webpages become interactive.
-        The session was helpful for building a strong foundation in front-end development.
-    </p>
-    <button>Click to add Paragraph</button>
-    <div></div>
-    <br />
-    <div class="input-section">
-        <input type="text" id="taskInput" placeholder="Enter a task" />
-        <button id="addTaskBtn">Add Task</button>
-    </div>
 
+    <main class="app">
+        <h1>Day 7 JavaScript + DOM Project Part 2</h1>
 
-    <div id="taskList"></div>
+        <div class="input-section">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task"
+            />
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+
+        <div id="taskList"></div>
+    </main>
 
     <script src="script.js"></script>
-
-
 </body>
-
 </html>
