@@ -18,7 +18,7 @@ function App() {
         title="Reusability"
         description="Using props makes components flexible and reusable."
       />
-      <Counter/>
+      <Counter />
     </>
   );
 }
