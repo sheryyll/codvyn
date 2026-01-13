@@ -1,41 +1,32 @@
-const paragraph = document.querySelector("p");
-const button = document.querySelector("button");
-const box = document.querySelector("div");
+// element selection
+const taskInput = document.querySelector("#taskInput"); // selects input task
+const addTaskBtn = document.querySelector("#addTaskBtn"); // selects the button with id addTaaskBt
+const taskList = document.querySelector("#taskList"); // selects the target container for task lists
 
-paragraph.textContent = "This paragraph text was changed using JavaScript.";
+// function to create tasks
+function createTask(text) {
+    const taskDiv = document.createElement("div"); // create a div 
+    taskDiv.className = "task";  // adds a classame task to div 
 
-box.style.backgroundColor = "lightblue";
-box.style.padding = "10px";
-box.style.marginTop = "10px";
-box.style.width = "250px";
+    const taskText = document.createElement("p"); // creates a child element paragraph
+    taskText.textContent = text; // adds the text content 
 
-button.addEventListener("click", function () {
-    const newPara = document.createElement("p");
-    newPara.textContent = "New paragraph added on button click.";
-    box.appendChild(newPara);
-});
+    const deleteBtn = document.createElement("button"); // creates a button to delete the task
+    deleteBtn.textContent = "Delete"; 
 
-const taskInput = document.querySelector("#taskInput");
-const addTaskBtn = document.querySelector("#addTaskBtn");
-const taskList = document.querySelector("#taskList");
+    deleteBtn.addEventListener("click", () => {
+        taskDiv.remove();
+    }); // logic to remove the task from list
 
+    taskDiv.append(taskText, deleteBtn); // appending the task to the target container
+    return taskDiv;
+}
+
+// event handling using addEventListener
 addTaskBtn.addEventListener("click", () => {
-  const taskText = taskInput.value.trim();
-  if (!taskText) return;
+    const value = taskInput.value.trim();
+    if (!value) return;
 
-  const taskDiv = document.createElement("div");
-  taskDiv.classList.add("task");
-
-  const taskPara = document.createElement("p");
-  taskPara.textContent = taskText;
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.textContent = "Delete";
-
-  deleteBtn.addEventListener("click", () => taskDiv.remove());
-
-  taskDiv.append(taskPara, deleteBtn);
-  taskList.appendChild(taskDiv);
-
-  taskInput.value = "";
+    taskList.appendChild(createTask(value));
+    taskInput.value = "";
 });
