@@ -1,6 +1,7 @@
 import Card from "./components/Card";
 import Counter from "./components/Counter";
 import ToggleMessage from "./components/ToggleMessage";
+import UserList from "./components/UserList";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
       <Counter />
 
       <ToggleMessage />
+
+    <UserList />
     </>
   );
 }
