@@ -1,4 +1,5 @@
 import Card from "./components/Card";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         title="Reusability"
         description="Using props makes components flexible and reusable."
       />
+      <Counter/>
     </>
   );
 }
