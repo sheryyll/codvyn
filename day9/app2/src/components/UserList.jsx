@@ -40,7 +40,8 @@ function UserList() {
                         Username: {user.username} <br />
                         Email: {user.email} <br />
                         Phone: {user.phone} <br />
-                        Company: {user.company.name}
+                        Company: {user.company.name} <br />
+                        <br />
                     </li>
                 ))}
             </ul>
