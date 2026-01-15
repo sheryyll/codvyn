@@ -4,27 +4,29 @@ import ToggleMessage from "./components/ToggleMessage";
 import UserList from "./components/UserList";
 
 function App() {
+  const cards = [
+    { id: 1, title: "React", description: "A JavaScript library" },
+    { id: 2, title: "Props", description: "Passing data to components" },
+    { id: 3, title: "Components", description: "Reusable UI blocks" }
+  ];
+
   return (
     <>
-      <Card
-        title="React Components"
-        description="Components help break the UI into reusable pieces."
-      />
-
-      <Card
-        title="Props"
-        description="Props allow data to be passed from parent to child components."
-      />
-
-      <Card
-        title="Reusability"
-        description="Using props makes components flexible and reusable."
-      />
+      <div className="card-container">
+      {cards.map(card => (
+        <Card
+          key={card.id}
+          title={card.title}
+          description={card.description}
+        />
+      ))}
+    </div>
+    
       <Counter />
 
       <ToggleMessage />
 
-    <UserList />
+      <UserList />
     </>
   );
 }
