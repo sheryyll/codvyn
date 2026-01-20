@@ -4,13 +4,13 @@ const User = require("../models/User");
 
 router.post("/", async (req, res) => {
   try {
-    const { name, email } = req.body;
+    const { name, email, password } = req.body;
 
-    if (!name || !email) {
-      return res.status(400).json({ message: "Name and email are required" });
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "Name, email adn password are required" });
     }
 
-    const newUser = new User({ name, email });
+    const newUser = new User({ name, email, password });
     const savedUser = await newUser.save();
 
     res.status(201).json(savedUser);
