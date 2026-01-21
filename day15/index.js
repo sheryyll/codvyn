@@ -3,6 +3,7 @@ const usersRouter = require("./routes/users");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const  authRoutes = require('./routes/authRoutes');
+const cookieParser = require('cookie-parser');
 
 dotenv.config();
 
@@ -12,13 +13,14 @@ const PORT = 3000;
 connectDB();
 
 app.use(express.json());
-app.use(authRoutes);
+app.use(cookieParser());
+app.use("/api/auth", authRoutes);
 
 
 app.get("/", (req, res) => {
   res.send("Day 15 Express server is running");
 });
-
+ 
 app.get("/api/hello", (req, res) => {
   res.json({
     message: "Hello from API"
