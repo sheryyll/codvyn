@@ -9,7 +9,6 @@ const createToken = (id) => {
     });
 };
 
-// handle error
 const handleErrors = (err) => {
 
     let errors = { email: '', password: '', name: '' };
@@ -22,12 +21,10 @@ const handleErrors = (err) => {
         errors.password = 'Incorrect password';
     }
 
-    // duplicate error code
     if (err.code === 11000) {
         errors.email = 'That email is already registered';
     }
 
-    //validation errors
     if (err.message.includes('user validation failed')) {
         Object.values(err.errors).forEach(({ properties }) => {
             errors[properties.path] = properties.message;
