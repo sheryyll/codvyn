@@ -2,6 +2,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
+const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/users");
+
 dotenv.config();
 
 const app = express();
@@ -11,11 +14,11 @@ connectDB();
 
 app.use(express.json());
 
-app.use("/api/users", require("./routes/users"));
-
+app.use("/api/users", userRoutes); 
+app.use("/api/auth", authRoutes); // day 19 addition
 
 app.get("/", (req, res) => {
-  res.send("Day 18 MongoDB & Mongoose Fundamentals Part 2");
+  res.send("Day 19 Authentication with JWT Part 1");
 });
 
 app.listen(PORT, () => {

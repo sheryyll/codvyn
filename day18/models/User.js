@@ -13,6 +13,11 @@ const userSchema = new mongoose.Schema(
     },
     age: {
       type: Number
+    },
+    // day 19 addition
+     password: {
+      type: String,
+      required: true
     }
   },
   {
